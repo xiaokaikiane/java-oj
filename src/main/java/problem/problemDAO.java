@@ -31,8 +31,8 @@ public class problemDAO {
                 problem.setId(resultSet.getInt("id"));
                 problem.setTitle(resultSet.getString("title"));
                 problem.setLevel(resultSet.getString("level"));
-//                problem.setDescription(resultSet.getString("description"));
-//                problem.setTemplateCode(resultSet.getString("templateCode"));
+                problem.setDescription(resultSet.getString("description"));
+                problem.setTemplateCode(resultSet.getString("templateCode"));
 //                problem.setTestCode(resultSet.getString("testCode"));
                 result.add(problem);
             }
@@ -125,13 +125,12 @@ public class problemDAO {
 //                "输入: 38\n" +
 //                "输出: 2 \n" +
 //                "解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。\n");
-//        problem.setTemplateCode("class Solution {\n" +
+//        problem.setTemplateCode("public class Solution {\n" +
 //                "    public int addDigits(int num) {\n" +
 //                "\n" +
 //                "    }\n" +
 //                "}");
-//        problem.setTestCode("public class TestCode {\n" +
-//                "    public static void main(String[] args) {\n" +
+//        problem.setTestCode(" public static void main(String[] args) {\n" +
 //                "        Solution s=new Solution();\n" +
 //                "        if(s.addDigits(38)==2){\n" +
 //                "            System.out.println(\"test ok\");\n" +
@@ -144,8 +143,7 @@ public class problemDAO {
 //                "        }else{\n" +
 //                "            System.out.println(\"test failed\");\n" +
 //                "        }\n" +
-//                "    }\n" +
-//                "}\n");
+//                "    }\n");
 //        problemDAO problemDAO=new problemDAO();
 //        problemDAO.insert(problem);
 //        System.out.println("insert ok");

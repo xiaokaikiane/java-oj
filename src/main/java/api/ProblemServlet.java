@@ -29,12 +29,26 @@ public class ProblemServlet extends HttpServlet {
 
 
     private void selectAll(HttpServletResponse resp)throws IOException {
+        //Content-Type:描述了body数据的类型
+        //常见取值
+        //html:text/html
+        //图片:image/png   image/jpg
+        //json:application/json
+        //css:text/css
+        //javaScript:application/Javascript
+        resp.setContentType("application/json;charset=utf-8");
         problemDAO problemDAO=new problemDAO();
         List<Problem> problems=problemDAO.selectAll();
         //把结果组织成json结构
         String JsonString=gson.toJson(problems);
         resp.getWriter().write(JsonString);
     }
-    private void selectOne(int parseInt, HttpServletResponse resp) {
+    private void selectOne(int parseInt, HttpServletResponse resp) throws IOException {
+        resp.setContentType("application/json;charset=utf-8");
+        problemDAO problemDAO=new problemDAO();
+        Problem problem=problemDAO.selectOne(parseInt);
+        problem.setTestCode("");
+        String JsonString =gson.toJson(problem);
+        resp.getWriter().write(JsonString);
     }
 }
