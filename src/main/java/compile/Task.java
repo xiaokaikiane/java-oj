@@ -64,8 +64,7 @@ public class Task {
         question.setCode(
                 "public class Solution{\n"+
                 "public static void main(String[] args) {\n"+
-                 "String s=null;"+
-                "System.out.println(s.length());\n"+
+                "System.out.println(\"hello\");\n"+
                 "}\n"+
                 "}\n"
         );
