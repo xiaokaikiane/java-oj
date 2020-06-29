@@ -18,6 +18,7 @@ import java.io.InputStream;
 public class CompileServlet  extends HttpServlet {
     private Gson gson=new GsonBuilder().create();
     //创建两个辅助类,用来完成请求解析和响应构建
+    //用于辅助解析body中的数据请求
     static  class CompileRequest{
        private int id;
        private String code;
@@ -38,6 +39,7 @@ public class CompileServlet  extends HttpServlet {
             this.code = code;
         }
     }
+    //用于辅助构造最终响应的body数据
     static class CompileResponse{
         private int ok;
         private String reason;
@@ -97,6 +99,7 @@ public class CompileServlet  extends HttpServlet {
         compileResponse.setReason(answer.getReason());
         compileResponse.setStdout(answer.getStdout());
         String JsonString=gson.toJson(compileResponse);
+        resp.setContentType("application/json;charset=utf-8");
         resp.getWriter().write(JsonString);
     }
 

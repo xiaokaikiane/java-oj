@@ -31,8 +31,8 @@ public class problemDAO {
                 problem.setId(resultSet.getInt("id"));
                 problem.setTitle(resultSet.getString("title"));
                 problem.setLevel(resultSet.getString("level"));
-                problem.setDescription(resultSet.getString("description"));
-                problem.setTemplateCode(resultSet.getString("templateCode"));
+//                problem.setDescription(resultSet.getString("description"));
+//                problem.setTemplateCode(resultSet.getString("templateCode"));
 //                problem.setTestCode(resultSet.getString("testCode"));
                 result.add(problem);
             }
@@ -147,7 +147,7 @@ public class problemDAO {
 //        problemDAO problemDAO=new problemDAO();
 //        problemDAO.insert(problem);
 //        System.out.println("insert ok");
-        //2.测试selectAll()
+//        2.测试selectAll()
 //        problemDAO problemDAO=new problemDAO();
 //        List<Problem> problems=problemDAO.selectAll();
 //        System.out.println("selectAll: "+problems);
